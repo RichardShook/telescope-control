@@ -1,0 +1,18 @@
+{
+  "raPosition": 0,
+  "decPosition": 0,
+  "raZeroOffsetSteps": 0,
+  "decZeroOffsetSteps": 0,
+  "raZeroOffsetEast": 0,
+  "decZeroOffsetEast": 0,
+  "raZeroOffsetWest": 2920,
+  "decZeroOffsetWest": -12800,
+  "raAlignOffsetSteps": 0,
+  "decAlignOffsetSteps": 0,
+  "trackingEnabled": false,
+  "pierFlipState": false,
+  "raInvertActive": true,
+  "decInvertActive": true,
+  "parkRaSteps": null,
+  "parkDecSteps": null
+}

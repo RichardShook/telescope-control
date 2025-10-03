@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Telescope Control</title>
+<style>
+button:active { transform: scale(0.98); }
+.app-root button { color:#507e84; }
+button { color:#6aaab3; text-shadow: 0 1px 0 rgba(0,0,0,0.35); }
+/* High-contrast text on white buttons (force black text, no shadow) */
+button.white,
+button.btn-white,
+button[style*="background:#fff"],
+button[style*="background: #fff"],
+button[style*="background:#ffffff"],
+button[style*="background: #ffffff"],
+button[style*="background:#FFF"],
+button[style*="background: #FFF"],
+button[style*="background:#FFFFFF"],
+button[style*="background: #FFFFFF"],
+button[style*="background:white"],
+button[style*="background: white"],
+button[style*="background-color:#fff"],
+button[style*="background-color: #fff"],
+button[style*="background-color:#ffffff"],
+button[style*="background-color: #ffffff"],
+button[style*="background-color:#FFF"],
+button[style*="background-color: #FFF"],
+button[style*="background-color:#FFFFFF"],
+button[style*="background-color: #FFFFFF"],
+button[style*="background-color:white"],
+button[style*="background-color: white"],
+button[style*="background:rgb(255,255,255)"],
+button[style*="background: rgb(255, 255, 255)"] {
+  color:#000 !important;
+  text-shadow:none !important;
+}
+/* Hover/focus should remain black */
+button.white:hover,
+button.btn-white:hover,
+button[style*="background:#fff"]:hover,
+button[style*="background: #fff"]:hover,
+button[style*="background:#ffffff"]:hover,
+button[style*="background: #ffffff"]:hover,
+button[style*="background:#FFF"]:hover,
+button[style*="background: #FFF"]:hover,
+button[style*="background:#FFFFFF"]:hover,
+button[style*="background: #FFFFFF"]:hover,
+button[style*="background:white"]:hover,
+button[style*="background: white"]:hover,
+button[style*="background-color:#fff"]:hover,
+button[style*="background-color: #fff"]:hover,
+button[style*="background-color:#ffffff"]:hover,
+button[style*="background-color: #ffffff"]:hover,
+button[style*="background-color:#FFF"]:hover,
+button[style*="background-color: #FFF"]:hover,
+button[style*="background-color:#FFFFFF"]:hover,
+button[style*="background-color: #FFFFFF"]:hover,
+button[style*="background-color:white"]:hover,
+button[style*="background-color: white"]:hover,
+button[style*="background:rgb(255,255,255)"]:hover,
+button[style*="background: rgb(255, 255, 255)"]:hover {
+  color:#000 !important;
+}
+button:hover { color:#ffffff; }
+button:disabled { color:#90a4ae; text-shadow:none; }
+button:focus-visible { outline:2px solid #00bcd4; outline-offset:2px; }
+.app-root { font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif; }
+body { margin:0 0 0 20px; background:#08131d; color:#e0f7fa; font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif; }
+/* Optional: indent page title further if desired */
+#header h3 { margin-left:0; }
+code, .mono, .monospace { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+/* Panels */
+.panel { background:#102030; border:1px solid #1e3a5a; border-radius:8px; box-shadow:0 0 6px #001b33 inset; }
+.subpanel { background:#1b2942; border:1px solid #294969; border-radius:4px; }
+.small-label { font-size:.65rem; letter-spacing:.5px; }
+.status-accent { color:#90caf9; }
+.pier-west #raArcShortest { stroke:#4caf50; }
+.pier-east #raArcShortest { stroke:#29b6f6; }
+.pier-west #decArcShortest { stroke:#ffeb3b; }
+.pier-east #decArcShortest { stroke:#ff9800; }
+.pier-west #raArcAlternate { stroke:#ff7043; }
+.pier-east #raArcAlternate { stroke:#ab47bc; }
+.pier-west #decArcAlternate { stroke:#9c27b0; }
+.pier-east #decArcAlternate { stroke:#8d6e63; }
+@keyframes arcTravelDyn { from { stroke-dashoffset:0; } to { stroke-dashoffset: var(--arcTravelLen, -100%); } }
+/* DEC marker stroke no longer varies with HA-based OTA orientation */
+#decMarker { stroke:#ff9800; }
+/* Step-only mode: hide RA/DEC degree/hour UI elements */
+body.step-only .deg-field, body.step-only .hour-field, body.step-only .dec-degree-display, body.step-only .ra-hour-display, body.step-only .dec-derived-block { display:none !important; }
+body.step-only .steps-only-note { display:inline-block; }
+.steps-only-note { display:none; font-size:.6rem; color:#ffb74d; margin-left:.5rem; }
+/* DEC motor direction arrow animations */
+@keyframes sweepUp { 0%{opacity:.3; transform:scale(.9);} 50%{opacity:1; transform:scale(1.05);} 100%{opacity:.3; transform:scale(.9);} }
+@keyframes sweepDown { 0%{opacity:.3; transform:scale(.9);} 50%{opacity:1; transform:scale(1.05);} 100%{opacity:.3; transform:scale(.9);} }
+.sweep-up { animation: sweepUp 2s linear infinite; }
+.sweep-down { animation: sweepDown 2s linear infinite; }
+/* Show DEC direction arrow (CCW arc on left) */
+/* #decDirArc previously hidden; now visible by default */
+/* GOTO DEC DMS group layout */
+.goto-dec-group { display:block; margin-bottom:12px; }
+.goto-dec-group label { display:block; font-weight:bold; margin-bottom:4px; }
+.goto-dec-group input { display:inline-block; width:60px; padding:4px; margin-right:6px; border:1px solid #ccc; background-color:#fff; color:#000; position:relative; z-index:10; }
+/* GOTO panel container visibility */
+.goto-panel { display:flex; flex-direction:column; gap:8px; overflow:visible; }
+/* Preview label emphasis */
+.preview-label { margin-left:12px; font-weight:bold; font-family:monospace; color:#90caf9; font-size:.65rem; }
+/* RA HMS group styling matching DEC */
+.goto-ra-group { display:block; margin-bottom:12px; }
+.goto-ra-group label { display:block; font-weight:bold; margin-bottom:4px; }
+.goto-ra-group input { display:inline-block; width:60px; padding:4px; margin-right:6px; border:1px solid #ccc; background-color:#fff; color:#000; position:relative; z-index:10; }
+#gotoRaStepsPreview { margin-left:12px; font-weight:bold; }
+/* Busy overlay */
+#busyOverlay { position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; z-index:10000; }
+#busyOverlay .busy-card { background:#102030; border:1px solid #1e3a5a; border-radius:8px; padding:12px 16px; display:flex; gap:.6rem; align-items:center; box-shadow:0 0 10px #001b33; }
+#busyOverlay .spinner { width:18px; height:18px; border:2px solid #27445f; border-top-color:#00bcd4; border-radius:50%; animation: spin 0.9s linear infinite; }
+#busyOverlay .text { color:#e0f7fa; font-family:monospace; font-size:.85rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* DEC direction arrow animations */
+/* Show DEC direction arrow (CCW arc on left) */
+/* #decDirArc previously hidden; now visible by default */
+.dec-direction-arrow {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+.dec-direction-arrow.east {
+  stroke: #4caf50;
+}
+.dec-direction-arrow.west {
+  stroke: #2196f3;
+}
+
+/* RA direction dot */
+#raMarker {
+  fill: #ffffff;
+  stroke: #00bcd4;
+  stroke-width: 1;
+}
+
+/* DEC direction dot */
+#decMarker {
+  fill: #ffffff;
+  stroke: #ffb74d;
+  stroke-width: 1;
+}
+
+/* GOTO RA/DEC markers */
+#raGotoMarker, #decGotoMarker {
+  fill: none;
+  stroke-width: 1.5;
+  stroke-dasharray: 4, 3;
+  visibility: hidden;
+}
+
+/* Animation for OTA direction arrows (RA/DEC) */
+@keyframes otaDirArrow {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+.ota-dir-arrow {
+  fill: none;
+  stroke-width: 2;
+  opacity: 0.9;
+  animation: otaDirArrow 2s linear infinite;
+}
+
+/* Respect OS reduced motion preference: disable animations/transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Telescope Control</h1>
+    <div class="main-grid">
+      <!-- GOTO Panel -->
+      <div class="control-panel goto-panel">
+        <h2>GOTO</h2>
+        <div class="coord-input">
+          <label for="gotoRaHour">RA</label>
+          <input type="text" id="gotoRaHour" placeholder="HH" size="2">
+          <input type="text" id="gotoRaMin" placeholder="MM" size="2">
+          <input type="text" id="gotoRaSec" placeholder="SS" size="2">
+        </div>
+        <div class="coord-input">
+          <label for="gotoDecDeg">DEC</label>
+          <input type="text" id="gotoDecDeg" placeholder="DD" size="2">
+          <input type="text" id="gotoDecMin" placeholder="MM" size="2">
+          <input type="text" id="gotoDecSec" placeholder="SS" size="2">
+        </div>
+        <div class="button-group">
+          <button onclick="gotoTarget()">GOTO</button>
+          <button onclick="cancelGoto()">Cancel</button>
+        </div>
+        <div id="moveStatus" class="status-line"></div>
+        <div id="pierSideLabel" class="status-line"></div>
+      </div>
+      
+      <!-- Camera Panel -->
+      <div class="control-panel camera-panel">
+        <h2>Camera</h2>
+        <div class="camera-controls">
+          <select id="cameraMode">
+            <option value="live">Live View</option>
+            <option value="still">Still Image</option>
+          </select>
+          <button onclick="capture()">Capture</button>
+        </div>
+        <div class="camera-settings">
+          <label for="exposure">Exp (ms)</label>
+          <input type="number" id="exposure" value="1000" min="10" max="60000">
+          <label for="gain">Gain</label>
+          <input type="number" id="gain" value="1.0" min="0.1" max="20" step="0.1">
+        </div>
+        <div class="camera-status">
+          <span id="cameraStatus"></span>
+        </div>
+        <div class="camera-preview">
+          <img id="previewImage" src="placeholder.svg" alt="Camera Preview">
+        </div>
+      </div>
+
+      <!-- Diagrams Panel -->
+      <div class="control-panel diagrams-panel">
+        <h2>Diagrams</h2>
+        <div class="diagram-container">
+          <svg id="raDiagram" width="240" height="150" viewBox="0 0 240 150">
+            <circle cx="120" cy="120" r="90" fill="none" stroke="#444" stroke-width="1"/>
+            <line x1="30" y1="120" x2="210" y2="120" stroke="#444" stroke-width="0.5" />
+            <text x="120" y="20" fill="#ccc" font-size="12" text-anchor="middle">RA</text>
+            <circle id="raIndicator" cx="120" cy="30" r="5" fill="#00bcd4" />
+            <circle id="raGotoMarker" cx="120" cy="30" r="4" fill="#ffeb3b" stroke="black" stroke-width="0.5" visibility="hidden" />
+            <text id="raGotoDir" x="120" y="15" fill="#b0bec5" font-size="10" text-anchor="middle"></text>
+          </svg>
+        </div>
+        <div class="diagram-container">
+          <svg id="decDiagram" width="240" height="150" viewBox="0 0 240 150">
+            <circle cx="120" cy="120" r="90" fill="none" stroke="#444" stroke-width="1"/>
+            <line x1="30" y1="120" x2="210" y2="120" stroke="#444" stroke-width="0.5" />
+            <text x="120" y="20" fill="#ccc" font-size="12" text-anchor="middle">DEC</text>
+            <circle id="decIndicator" cx="120" cy="30" r="5" fill="#00bcd4" />
+            <circle id="decGotoMarker" cx="120" cy="30" r="4" fill="#ffeb3b" stroke="black" stroke-width="0.5" visibility="hidden" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Status and Manual Controls -->
+    <div class="status-controls-grid">
+      <div class="control-panel status-panel">
+        <h2>Status</h2>
+        <div id="LST_DEC_RA" class="status-line">LST --:--:--</div>
+        <div id="LAT_LONG" class="status-line">Lat --°--'--" Long --°--'--"</div>
+        <div id="MOUNT_POS" class="status-line">RA: --h --m --s | DEC: --° --' --"</div>
+        <div id="HA_PIER" class="status-line">HA: --h --m --s | Pier: --</div>
+        <div id="FOCUSER_POS" class="status-line">Focuser: ---- steps</div>
+      </div>
+      
+      <div class="control-panel manual-controls">
+        <h2>Manual Controls</h2>
+        <div class="nudge-controls">
+          <div class="nudge-set">
+            <label>RA</label>
+            <button onclick="nudge('RA', -100)">-</button>
+            <button onclick="nudge('RA', 100)">+</button>
+          </div>
+          <div class="nudge-set">
+            <label>DEC</label>
+            <button onclick="nudge('DEC', -100)">-</button>
+            <button onclick="nudge('DEC', 100)">+</button>
+          </div>
+        </div>
+        <div class="button-group">
+          <button onclick="homeMount()">Home</button>
+          <button id="trackingBtn" onclick="toggleTracking()">Tracking Off</button>
+          <button onclick="emergencyStop()" class="danger">STOP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // Global state
+  let lastFetchedRaSteps = 0;
+  let lastFetchedDecSteps = 0;
+  let siteFromServerActive = false;
+  
+  // DOM element getters
+  const raIndicator = () => document.getElementById('raIndicator');
+  const decIndicator = () => document.getElementById('decIndicator');
+  const raGotoMarker = () => document.getElementById('raGotoMarker');
+  const decGotoMarker = () => document.getElementById('decGotoMarker');
+
+  // LST and time synchronization
+  const lstSync = { baseLstHours: 0, baseTimeMs: 0 };
+  function currentLSTHours() {
+    const elapsedMs = Date.now() - lstSync.baseTimeMs;
+    const elapsedHours = elapsedMs / (1000 * 60 * 60);
+    const siderealRate = 1.00273790935;
+    return (lstSync.baseLstHours + elapsedHours * siderealRate) % 24;
+  }
+
+  // Coordinate conversion utilities
+  function dmsToDecimal(d, m, s) {
+    const sign = d < 0 ? -1 : 1;
+    return sign * (Math.abs(d) + m / 60 + s / 3600);
+  }
+
+  function decimalToDms(dec) {
+    const sign = dec < 0 ? -1 : 1;
+    const d = Math.abs(dec);
+    const deg = Math.floor(d);
+    const minFloat = (d - deg) * 60;
+    const min = Math.floor(minFloat);
+    const sec = Math.round((minFloat - min) * 60);
+    return { sign, deg, min, sec };
+  }
+
+  function hoursToHms(h) {
+    const sign = h < 0 ? -1 : 1;
+    const totalSeconds = Math.abs(h) * 3600;
+    const hh = Math.floor(totalSeconds / 3600);
+    const mm = Math.floor((totalSeconds % 3600) / 60);
+    const ss = Math.round(totalSeconds % 60);
+    return { sign, h: hh, m: mm, s: ss };
+  }
+
+  function pad2(n) { return String(n).padStart(2, '0'); }
+
+  // UI update functions
+  function updateMountPosition(data) {
+    lastFetchedRaSteps = data.raSteps;
+    lastFetchedDecSteps = data.decSteps;
+    
+    const raHms = hoursToHms(data.reportedRaHours);
+    const decDms = decimalToDms(data.reportedDecDeg);
+    
+    const mountPosDiv = document.getElementById('MOUNT_POS');
+    if (mountPosDiv) {
+      mountPosDiv.textContent = `RA: ${raHms.h}h ${raHms.m}m ${raHms.s}s | DEC: ${decDms.sign * decDms.deg}° ${decDms.min}' ${decDms.sec}"`;
+    }
+    
+    const haHms = hoursToHms(data.hourAngleHours);
+    const haPierDiv = document.getElementById('HA_PIER');
+    if (haPierDiv) {
+      haPierDiv.textContent = `HA: ${haHms.sign * haHms.h}h ${haHms.m}m ${haHms.s}s | Pier: ${data.lstPierSide.replace('Lst','').replace('Pier','')}`;
+    }
+    
+    const trackingBtn = document.getElementById('trackingBtn');
+    if (trackingBtn) {
+      trackingBtn.textContent = data.trackingEnabled ? 'Tracking On' : 'Tracking Off';
+      trackingBtn.style.backgroundColor = data.trackingEnabled ? '#4caf50' : '#f44336';
+    }
+    
+    updateDiagrams(data.raSteps, data.decSteps, data.hourAngleHours);
+  }
+
+  function updateFocuserPosition(data) {
+    const focuserPosDiv = document.getElementById('FOCUSER_POS');
+    if (focuserPosDiv) {
+      let text = `Focuser: ${data.focuserSteps} steps`;
+      if (data.focuserMoving) text += ' (moving)';
+      if (data.focuserLimit) text += ' [LIMIT]';
+      focuserPosDiv.textContent = text;
+    }
+  }
+
+  function updateDiagrams(raSteps, decSteps, haHours) {
+    const raPos = calculateRAPosition(raSteps, haHours < 0 ? 'East' : 'West');
+    const raDot = raIndicator();
+    if (raDot) {
+      raDot.setAttribute('cx', raPos.x);
+      raDot.setAttribute('cy', raPos.y);
+    }
+    
+    const decPos = calculateDecPosition(decSteps, haHours);
+    const decDot = decIndicator();
+    if (decDot) {
+      decDot.setAttribute('cx', decPos.x);
+      decDot.setAttribute('cy', decPos.y);
+    }
+  }
+
+  function calculateRAPosition(raSteps, pierSide) {
+    const cx = 120, cy = 120, r = 90;
+    const totalSteps = 128000; // ±6h window
+    const midPoint = 64000;
+    
+    let effectiveSteps = raSteps;
+    
+    // Map timeline steps to angle
+    const angleDeg = 90 - ((effectiveSteps - midPoint) / (totalSteps / 2)) * 90;
+    const angleRad = angleDeg * Math.PI / 180;
+    
+    const x = cx + r * Math.cos(angleRad);
+    const y = cy - r * Math.sin(angleRad);
+    
+    return { x, y };
+  }
+
+  function calculateDecPosition(decSteps, haHours) {
+    const cx = 120, cy = 120, r = 90;
+    const maxSteps = 25600; // 0 to +90 or 0 to -90
+    
+    const y = cy - r + (decSteps / maxSteps) * (2 * r);
+    const dy = y - cy;
+    const dx = Math.sqrt(Math.max(0, r * r - dy * dy));
+    
+    const x = haHours < 0 ? (cx + dx) : (cx - dx);
+    
+    return { x, y };
+  }
+  
+  // EventSource for real-time updates
+  function setupEventSource() {
+    const evtSource = new EventSource('/events');
+    evtSource.addEventListener('mount', (event) => {
+      const data = JSON.parse(event.data);
+      updateMountPosition(data);
+    });
+    evtSource.addEventListener('focuser', (event) => {
+      const data = JSON.parse(event.data);
+      updateFocuserPosition(data);
+    });
+    evtSource.onerror = () => {
+      console.warn('SSE connection lost. Reconnecting...');
+    };
+  }
+
+  // --- GOTO and Preview Logic ---
+
+  function readGotoRAHours() {
+    const h = parseFloat(document.getElementById('gotoRaHour').value) || 0;
+    const m = parseFloat(document.getElementById('gotoRaMin').value) || 0;
+    const s = parseFloat(document.getElementById('gotoRaSec').value) || 0;
+    return h + m / 60 + s / 3600;
+  }
+
+  function readGotoDecDegrees() {
+    const d = parseFloat(document.getElementById('gotoDecDeg').value) || 0;
+    const m = parseFloat(document.getElementById('gotoDecMin').value) || 0;
+    const s = parseFloat(document.getElementById('gotoDecSec').value) || 0;
+    return dmsToDecimal(d, m, s);
+  }
+
+  function hideGotoMarkers(){
+    try { const m = raGotoMarker(); if(m) m.setAttribute('visibility','hidden'); } catch(_){ }
+    try { const m = decGotoMarker(); if(m) m.setAttribute('visibility','hidden'); } catch(_){ }
+    const dir = document.getElementById('raGotoDir'); if (dir) dir.textContent='';
+  }
+
+  function cancelGoto(){
+    hideGotoMarkers();
+    const st = document.getElementById('moveStatus');
+    if (st) st.textContent = 'GOTO cancelled';
+    console.log('GOTO cancelled - preview markers cleared');
+  }
+
+  async function gotoTarget(){
+    console.log('GOTO button clicked - gotoTarget() called');
+    const ra = readGotoRAHours();
+    const decDeg = readGotoDecDegrees();
+    
+    const raHourInput = document.getElementById('gotoRaHour')?.value; 
+    const decDegInput = document.getElementById('gotoDecDeg')?.value;
+    
+    if (!raHourInput || raHourInput.trim() === '' || !decDegInput || decDegInput.trim() === '') {
+      const st = document.getElementById('moveStatus');
+      if (st) { st.style.color = '#ff9800'; st.textContent = 'GOTO: Please enter both RA and DEC coordinates'; }
+      return;
+    }
+    
+    if (isNaN(ra) || isNaN(decDeg)) {
+      const st = document.getElementById('moveStatus');
+      if (st) { st.style.color = '#ff5722'; st.textContent = 'GOTO: Invalid coordinate format'; }
+      return;
+    }
+    
+    if (ra < 0 || ra >= 24) {
+      const st = document.getElementById('moveStatus');
+      if (st) { st.style.color = '#ff5722'; st.textContent = 'GOTO: RA must be 0-24 hours'; }
+      return;
+    }
+    
+    if (decDeg < -90 || decDeg > 90) {
+      const st = document.getElementById('moveStatus');
+      if (st) { st.style.color = '#ff5722'; st.textContent = `GOTO: DEC must be -90° to +90°`; }
+      return;
+    }
+    
+    const st = document.getElementById('moveStatus');
+    if (st){ st.style.color = '#90caf9'; st.textContent = 'GOTO: acquiring target...'; }
+    
+    try {
+      const response = await fetch('/mount-goto', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ raHours: ra, decDeg: decDeg })
+      });
+      
+      const result = await response.json();
+      if (!response.ok || result.error) {
+        throw new Error(result.message || result.error || 'Unknown error');
+      }
+      
+      if (st){ 
+        st.style.color = '#80cbc4'; 
+        st.textContent = `GOTO sent → RA ${ra.toFixed(3)}h DEC ${decDeg.toFixed(2)}°`;
+      }
+      
+      // Show preview markers at target
+      const lst = await refreshSiteLST();
+      const ha = computeHA(lst, ra);
+      placeRaGotoMarker(ra, lst);
+      placeDecGotoMarker(result.target.decSteps, ha);
+
+    } catch(e){ 
+      console.error('GOTO error:', e);
+      if (st){ st.style.color='#ff7043'; st.textContent = 'GOTO error: '+e.message; } 
+    }
+  }
+
+  function placeRaGotoMarker(raHours, lstHours){
+    const m = raGotoMarker(); if(!m) return;
+    const ha = computeHA(lstHours, raHours);
+    const pierSide = ha < 0 ? 'East' : 'West';
+    const raSteps = haToRaTimelineSteps(ha);
+    const pos = calculateRAPosition(raSteps, pierSide);
+    m.setAttribute('cx', pos.x);
+    m.setAttribute('cy', pos.y);
+    m.setAttribute('visibility','visible');
+  }
+
+  function placeDecGotoMarker(decSteps, haHours){
+    const m = decGotoMarker(); if(!m) return;
+    const pos = calculateDecPosition(decSteps, haHours);
+    m.setAttribute('cx', pos.x);
+    m.setAttribute('cy', pos.y);
+    m.setAttribute('visibility','visible');
+  }
+
+  function computeHA(lst, ra) {
+    let ha = lst - ra;
+    return ((ha + 12) % 24) - 12;
+  }
+
+  function haToRaTimelineSteps(ha) {
+    const stepsPerRev = 256000;
+    const stepsPerHour = stepsPerRev / 24;
+    return -ha * stepsPerHour;
+  }
+
+  // --- Manual Controls ---
+
+  async function nudge(axis, steps) {
+    try {
+      const response = await fetch('/mount/nudge', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ axis, steps })
+      });
+      const result = await response.json();
+      if (!result.ok) throw new Error(result.message || 'Nudge failed');
+    } catch (e) {
+      console.error(`Nudge error:`, e);
+      const st = document.getElementById('moveStatus');
+      if (st) { st.style.color = '#ff7043'; st.textContent = `Nudge error: ${e.message}`; }
+    }
+  }
+
+  async function homeMount() {
+    const st = document.getElementById('moveStatus');
+    if (st) { st.style.color = '#90caf9'; st.textContent = 'Homing...'; }
+    try {
+      const response = await fetch('/mount/home', { method: 'POST' });
+      const result = await response.json();
+      if (!result.status === 'homed') throw new Error('Homing failed');
+      if (st) { st.style.color = '#80cbc4'; st.textContent = 'Mount homed'; }
+    } catch (e) {
+      console.error('Home error:', e);
+      if (st) { st.style.color = '#ff7043'; st.textContent = `Home error: ${e.message}`; }
+    }
+  }
+
+  async function toggleTracking() {
+    const btn = document.getElementById('trackingBtn');
+    const currentlyEnabled = btn.textContent.includes('On');
+    try {
+      const response = await fetch('/tracking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ enabled: !currentlyEnabled })
+      });
+      const result = await response.json();
+      if (result.tracking === !currentlyEnabled) {
+        btn.textContent = result.tracking ? 'Tracking On' : 'Tracking Off';
+        btn.style.backgroundColor = result.tracking ? '#4caf50' : '#f44336';
+      }
+    } catch (e) {
+      console.error('Tracking toggle error:', e);
+    }
+  }
+
+  async function emergencyStop() {
+    const st = document.getElementById('moveStatus');
+    if (st) { st.style.color = '#e53935'; st.textContent = 'EMERGENCY STOP'; }
+    try {
+      await fetch('/mount/emergency-stop', { method: 'POST' });
+    } catch (e) {
+      console.error('Emergency stop error:', e);
+    }
+  }
+
+  // --- Camera Controls ---
+
+  async function capture() {
+    const statusEl = document.getElementById('cameraStatus');
+    statusEl.textContent = 'Capturing...';
+    try {
+      const exposure = document.getElementById('exposure').value;
+      const gain = document.getElementById('gain').value;
+      const mode = document.getElementById('cameraMode').value;
+      
+      let endpoint = '/camera/capture';
+      if (mode === 'live') {
+        // For live view, we just update the image src to the stream
+        const previewImg = document.getElementById('previewImage');
+        previewImg.src = `/camera/live?t=${Date.now()}`;
+        statusEl.textContent = 'Live view started';
+        return;
+      }
+      
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ exposureMs: exposure, gain: gain })
+      });
+      
+      const result = await response.json();
+      if (result.error) throw new Error(result.detail || result.error);
+      
+      const previewImg = document.getElementById('previewImage');
+      previewImg.src = `/captures/${result.meta.files.jpg}?t=${Date.now()}`;
+      statusEl.textContent = `Captured ${result.meta.files.jpg}`;
+      
+    } catch (e) {
+      statusEl.textContent = `Capture failed: ${e.message}`;
+      console.error('Capture error:', e);
+    }
+  }
+
+  // --- Initialization ---
+
+  async function refreshSiteLST(){
+    try {
+      const r = await fetch('/lst');
+      const j = await r.json();
+      if(j && typeof j.lstHours === 'number'){
+        console.debug('[LST] Fetched anchor', j.lstHms, j.lstHours);
+        const h = j.lstHours;
+        if(!document.getElementById('useApparentSidereal')?.checked){
+          lstSync.baseLstHours = h;
+          lstSync.baseTimeMs = Date.now();
+        }
+        const hh = Math.floor(h); const mm = Math.floor((h - hh)*60); const ss = Math.floor((((h - hh)*60)-mm)*60);
+        const lstStr = pad2(hh)+':'+pad2(mm)+':'+pad2(ss);
+        const lstDiv = document.getElementById('LST_DEC_RA');
+        if(lstDiv) lstDiv.textContent = 'LST  '+lstStr;
+        const latLongDiv = document.getElementById('LAT_LONG');
+        if(latLongDiv && j.site){
+          // Show DMS plus decimal
+            latLongDiv.textContent = `Lat ${j.site.latitudeDms} (${j.site.latitudeDeg.toFixed(5)}°)  Lon ${j.site.longitudeDms} (${j.site.longitudeDeg.toFixed(5)}°) ${j.site.name?('['+j.site.name+']'):''}`;
+        }
+        // Mark that we have authoritative site info from server so periodic UI doesn't overwrite it
+        siteFromServerActive = !!j.site;
+        // Provide lastLstHours for dependent visuals immediately
+        window.lastLstHours = h;
+        const currentLSTSpan = document.getElementById('currentLST');
+        if(currentLSTSpan) currentLSTSpan.textContent = 'LST '+lstStr;
+        updateHAPreview();
+        return h;
+      }
+    } catch(e) {
+      // Fallback: compute LST locally and show default Slater, IA lat/long
+      const h = localLSTHours(new Date());
+      const hh = Math.floor(h); const mm = Math.floor((h - hh)*60); const ss = Math.floor((((h - hh)*60)-mm)*60);
+      const lstStr = pad2(hh)+':'+pad2(mm)+':'+pad2(ss);
+      const lstDiv = document.getElementById('LST_DEC_RA');
+      if(lstDiv) lstDiv.textContent = 'LST  '+lstStr;
+      
+      if (!siteFromServerActive){
+        const latLongDiv = document.getElementById('LAT_LONG');
+        if(latLongDiv){
+          const lat = 41.88, lon = -93.68;
+          const latDms = decimalToDms(lat);
+          const lonDms = decimalToDms(lon);
+          latLongDiv.textContent = `Lat ${latDms.deg}°${latDms.min}'${latDms.sec}"N Lon ${lonDms.deg}°${lonDms.min}'${lonDms.sec}"W (local fallback)`;
+        }
+      }
+      window.lastLstHours = h;
+      return h;
+    }
+  }
+
+  function updateHAPreview() {
+    const ra = readGotoRAHours();
+    const lst = window.lastLstHours || 0;
+    const ha = computeHA(lst, ra);
+    const haHms = hoursToHms(ha);
+    const haPierDiv = document.getElementById('HA_PIER');
+    if (haPierDiv && haPierDiv.textContent.includes('HA:')) {
+      // Only update HA part
+      haPierDiv.textContent = `HA: ${haHms.sign * haHms.h}h ${haHms.m}m ${haHms.s}s | ${haPierDiv.textContent.split('|')[1]}`;
+    }
+  }
+
+  // Initial load and periodic refresh
+  document.addEventListener('DOMContentLoaded', () => {
+    refreshSiteLST();
+    setInterval(refreshSiteLST, 10000); // Refresh LST every 10 seconds
+    setupEventSource();
+    
+    // Add input listeners to update HA preview
+    ['gotoRaHour', 'gotoRaMin', 'gotoRaSec'].forEach(id => {
+      document.getElementById(id).addEventListener('input', updateHAPreview);
+    });
+  });
+
+  // --- Helper for local LST calculation (fallback) ---
+  function localLSTHours(date) {
+    const lon = -93.68; // Slater, IA
+    const jd = julianDate(date);
+    const T = (jd - 2451545.0) / 36525.0;
+    let gmst = 6.697374558 + 2400.051336 * T + 0.000025862 * T * T;
+    gmst = ((gmst % 24) + 24) % 24;
+    let lst = gmst + lon / 15;
+    return ((lst % 24) + 24) % 24;
+  }
+
+  function julianDate(date) {
+    const time = date.getTime();
+    const tzoffset = date.getTimezoneOffset() * 60000;
+    return (time - tzoffset) / 86400000 + 2440587.5;
+  }
+
+  </script>
+</body>
+</html>

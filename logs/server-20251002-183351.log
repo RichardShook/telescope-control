@@ -1,0 +1,39 @@
+[server] listening on http://0.0.0.0:3000
+[SERIAL] Starting device auto-discovery...
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[SERIAL] Trying /dev/ttyUSB1@9600...
+[SERIAL] Failed to open /dev/ttyUSB1@9600: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyUSB1@115200...
+[SERIAL] Failed to open /dev/ttyUSB1@115200: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyACM0@9600...
+[SERIAL] Opened /dev/ttyACM0@9600, listening for device messages...
+[HTTP] GET /lst
+[HTTP] GET /events
+[HTTP] GET /
+[HTTP] GET /placeholder.svg
+[HTTP] GET /lst
+[HTTP] GET /events
+[SERIAL] Timeout for /dev/ttyACM0@9600
+[HTTP] GET /favicon.ico
+[SERIAL] Trying /dev/ttyACM0@115200...
+[SERIAL] Opened /dev/ttyACM0@115200, listening for device messages...
+[MOUNT] Identified at /dev/ttyACM0@115200
+[MOUNT] Auto-identified at /dev/ttyACM0@115200
+[FOCUSER] Auto-identified at /dev/ttyUSB0@9600
+[HTTP] GET /
+[HTTP] GET /placeholder.svg
+[HTTP] GET /lst
+[HTTP] GET /events
+[HTTP] GET /favicon.ico
+[HTTP] GET /lst
+[HTTP] GET /lst
+[HTTP] GET /lst
+[HTTP] GET /lst
+[HTTP] GET /lst
+[HTTP] GET /lst
+[HTTP] GET /lst
+[HTTP] GET /lst

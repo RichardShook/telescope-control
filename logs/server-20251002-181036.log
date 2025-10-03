@@ -1,0 +1,1787 @@
+[server] listening on http://0.0.0.0:3000
+[SERIAL] Starting device auto-discovery...
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[SERIAL] Trying /dev/ttyUSB1@9600...
+[SERIAL] Failed to open /dev/ttyUSB1@9600: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyUSB1@115200...
+[SERIAL] Failed to open /dev/ttyUSB1@115200: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyACM0@9600...
+[SERIAL] Opened /dev/ttyACM0@9600, listening for device messages...
+[SERIAL] Timeout for /dev/ttyACM0@9600
+[SERIAL] Trying /dev/ttyACM0@115200...
+[SERIAL] Opened /dev/ttyACM0@115200, listening for device messages...
+[MOUNT] Identified at /dev/ttyACM0@115200
+[MOUNT] Auto-identified at /dev/ttyACM0@115200
+[FOCUSER] Auto-identified at /dev/ttyUSB0@9600
+[HTTP] POST /mount-goto
+GOTO INPUT: raHours=12, raSteps=undefined, decDeg=0, decSteps=undefined
+GOTO CONSTANTS: RA=256000 steps/24h (10666.67 steps/hour), DEC=51200 steps/360° (142.22 steps/degree)
+GOTO: RA 12h with LST 16.370h => HA 4.370h => abs 17390 steps
+GOTO: DEC deg 0 => mech 12800 steps; timeline -25600 (sign by HA 4.370)
+GOTO DEBUG: Target RA=12.000h (17390 steps), DEC=0.00° (12800 steps)
+GOTO DEBUG: Current RA=0 steps, DEC=0 steps
+GOTO DEBUG: LST=16.370h, HA=4.370h, Expected Pier=West
+GOTO CURRENT POSITION: RA=0 steps (12.000h), DEC=0 steps (90.000°)
+GOTO TARGET POSITION: RA=17390 steps (10.370h), DEC=12800 steps (0.000°)
+GOTO RAW DELTAS: RA=17390 steps (24.455°) [variant=direct], DEC=12800 steps (90.000°)
+GOTO FINAL DELTAS: RA=17390 steps (24.455°), DEC=12800 steps (90.000°)
+GOTO: Sent relative RA_MOVE:17390, DEC_MOVE:12800
+GOTO: Movement summary - RA: 1.630h (17390 steps), DEC: 45.00° (12800 steps)
+[HTTP] POST /mount-goto-ha
+[HTTP] GET /
+[HTTP] GET /placeholder.svg
+[HTTP] GET /camera.js
+[HTTP] POST /serial/rescan
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[HTTP] GET /alignment/offsets
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/modes
+[HTTP] GET /serial/status
+[HTTP] GET /placeholder.svg?v=1759441810212
+[HTTP] GET /serial/log?limit=5
+[HTTP] GET /favicon.ico
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[SERIAL] Trying /dev/ttyUSB1@9600...
+[SERIAL] Failed to open /dev/ttyUSB1@9600: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyUSB1@115200...
+[SERIAL] Failed to open /dev/ttyUSB1@115200: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyACM0@9600...
+[SERIAL] Opened /dev/ttyACM0@9600, listening for device messages...
+[HTTP] GET /
+[HTTP] GET /placeholder.svg
+[HTTP] GET /camera.js
+[HTTP] POST /serial/rescan
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[HTTP] GET /alignment/offsets
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] GET /camera/modes
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[HTTP] GET /serial/status
+[HTTP] GET /placeholder.svg?v=1759441812964
+[HTTP] GET /favicon.ico
+[HTTP] GET /serial/log?limit=5
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[SERIAL] Trying /dev/ttyUSB1@9600...
+[SERIAL] Failed to open /dev/ttyUSB1@9600: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyUSB1@115200...
+[SERIAL] Failed to open /dev/ttyUSB1@115200: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyACM0@9600...
+[SERIAL] Failed to open /dev/ttyACM0@9600: Error Resource temporarily unavailable Cannot lock port
+[SERIAL] Trying /dev/ttyACM0@115200...
+[SERIAL] Failed to open /dev/ttyACM0@115200: Error Resource temporarily unavailable Cannot lock port
+[SERIAL] Trying /dev/ttyACM1@9600...
+[SERIAL] Failed to open /dev/ttyACM1@9600: Error: No such file or directory, cannot open /dev/ttyACM1
+[SERIAL] Trying /dev/ttyACM1@115200...
+[SERIAL] Failed to open /dev/ttyACM1@115200: Error: No such file or directory, cannot open /dev/ttyACM1
+[MOUNT] Not identified via startup messages
+[FOCUSER] Auto-identified at /dev/ttyUSB0@9600
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[SERIAL] Timeout for /dev/ttyACM0@9600
+[SERIAL] Trying /dev/ttyACM0@115200...
+[SERIAL] Opened /dev/ttyACM0@115200, listening for device messages...
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[MOUNT] Identified at /dev/ttyACM0@115200
+[MOUNT] Auto-identified at /dev/ttyACM0@115200
+[FOCUSER] Auto-identified at /dev/ttyUSB0@9600
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/home
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /
+[HTTP] GET /placeholder.svg
+[HTTP] GET /camera.js
+[HTTP] POST /serial/rescan
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[HTTP] GET /alignment/offsets
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/modes
+[HTTP] GET /serial/status
+[HTTP] GET /placeholder.svg?v=1759441979919
+[HTTP] GET /serial/log?limit=5
+[HTTP] GET /favicon.ico
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[SERIAL] Trying /dev/ttyUSB1@9600...
+[SERIAL] Failed to open /dev/ttyUSB1@9600: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyUSB1@115200...
+[SERIAL] Failed to open /dev/ttyUSB1@115200: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyACM0@9600...
+[SERIAL] Opened /dev/ttyACM0@9600, listening for device messages...
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[SERIAL] Timeout for /dev/ttyACM0@9600
+[SERIAL] Trying /dev/ttyACM0@115200...
+[SERIAL] Opened /dev/ttyACM0@115200, listening for device messages...
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[MOUNT] Identified at /dev/ttyACM0@115200
+[MOUNT] Auto-identified at /dev/ttyACM0@115200
+[FOCUSER] Auto-identified at /dev/ttyUSB0@9600
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+RA movement blocked: would exceed minimum limit (-10111 -> 0)
+[HTTP] POST /serial/mount/write
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 73)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 1133)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 2407)
+[HTTP] GET /mount-position
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 3673)
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 4968)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 6576)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 7121)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 8274)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 9584)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 10630)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 11780)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 12926)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 15067)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 15187)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 16501)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 17720)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 18802)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 19953)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 20963)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-10111 (relative nudge by -10111, target 22013)
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+DEC movement blocked: would exceed minimum limit (-10111 -> 0)
+[HTTP] POST /serial/mount/write
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 0)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 464)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 1483)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 2455)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 3967)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 4366)
+[HTTP] GET /mount-position
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 5405)
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 6444)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 7410)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 8449)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 9400)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-10111 (relative nudge by -10111, target 10347)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+DEC movement blocked: would exceed maximum limit (35711 -> 25600)
+[HTTP] POST /serial/mount/write
+[HTTP] POST /mount/nudge
+DEC movement blocked: would exceed maximum limit (35711 -> 25600)
+[HTTP] POST /serial/mount/write
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-1011 (relative nudge by -1011, target 19897)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-1011 (relative nudge by -1011, target 19898)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-1011 (relative nudge by -1011, target 21247)
+[HTTP] GET /mount-position
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-1011 (relative nudge by -1011, target 21559)
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-1011 (relative nudge by -1011, target 22193)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 42107)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 42294)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 43108)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 43311)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 43792)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 44378)
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 44921)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 45591)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 46021)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 46593)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 47140)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 47693)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 48198)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 48752)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 49254)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 49839)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 50315)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 50860)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 51428)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 51964)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 52504)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 53028)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 54093)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 54139)
+[HTTP] GET /mount-position
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 54680)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 55203)
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 55768)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 56492)
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 57188)
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:-1011 (relative nudge by -1011, target 23924)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /mount/nudge
+DEC motor command: DEC_MOVE:1011 (relative nudge by 1011, target 25600)
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+DEC movement blocked: would exceed maximum limit (26611 -> 25600)
+[HTTP] POST /serial/mount/write
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 58904)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /mount/nudge
+RA motor command: RA_MOVE:-1011 (relative nudge by -1011, target 58905)
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /
+[HTTP] GET /placeholder.svg
+[HTTP] GET /camera.js
+[HTTP] POST /serial/rescan
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[HTTP] GET /alignment/offsets
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[HTTP] GET /camera/modes
+[HTTP] GET /serial/status
+[HTTP] GET /placeholder.svg?v=1759442317920
+[HTTP] GET /serial/log?limit=5
+[HTTP] GET /favicon.ico
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[SERIAL] Trying /dev/ttyUSB1@9600...
+[SERIAL] Failed to open /dev/ttyUSB1@9600: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyUSB1@115200...
+[SERIAL] Failed to open /dev/ttyUSB1@115200: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyACM0@9600...
+[SERIAL] Opened /dev/ttyACM0@9600, listening for device messages...
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[SERIAL] Timeout for /dev/ttyACM0@9600
+[SERIAL] Trying /dev/ttyACM0@115200...
+[SERIAL] Opened /dev/ttyACM0@115200, listening for device messages...
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[MOUNT] Identified at /dev/ttyACM0@115200
+[MOUNT] Auto-identified at /dev/ttyACM0@115200
+[FOCUSER] Auto-identified at /dev/ttyUSB0@9600
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /
+[HTTP] GET /placeholder.svg
+[HTTP] GET /camera.js
+[HTTP] POST /serial/rescan
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[HTTP] GET /placeholder.svg?v=1759445479208
+[HTTP] GET /mount-position
+[HTTP] GET /alignment/offsets
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/modes
+[HTTP] GET /serial/status
+[HTTP] GET /serial/log?limit=5
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[SERIAL] Trying /dev/ttyUSB1@9600...
+[SERIAL] Failed to open /dev/ttyUSB1@9600: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyUSB1@115200...
+[SERIAL] Failed to open /dev/ttyUSB1@115200: Error: No such file or directory, cannot open /dev/ttyUSB1
+[SERIAL] Trying /dev/ttyACM0@9600...
+[SERIAL] Opened /dev/ttyACM0@9600, listening for device messages...
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[SERIAL] Timeout for /dev/ttyACM0@9600
+[SERIAL] Trying /dev/ttyACM0@115200...
+[SERIAL] Opened /dev/ttyACM0@115200, listening for device messages...
+[HTTP] POST /serial/rescan
+[SERIAL] Starting device identification scan...
+[SERIAL] Scanning 4 ports at 2 baud rates each
+[SERIAL] Trying /dev/ttyUSB0@9600...
+[HTTP] GET /placeholder.svg?v=1759445484201
+[SERIAL] Opened /dev/ttyUSB0@9600, listening for device messages...
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[MOUNT] Identified at /dev/ttyACM0@115200
+[SERIAL] Trying /dev/ttyACM1@9600...
+[SERIAL] Failed to open /dev/ttyACM1@9600: Error: No such file or directory, cannot open /dev/ttyACM1
+[SERIAL] Trying /dev/ttyACM1@115200...
+[SERIAL] Failed to open /dev/ttyACM1@115200: Error: No such file or directory, cannot open /dev/ttyACM1
+[MOUNT] Auto-identified at /dev/ttyACM0@115200
+[FOCUSER] Not identified via startup messages
+[HTTP] POST /focuser/status
+[FOCUSER] Identified at /dev/ttyUSB0@9600
+[MOUNT] Auto-identified at /dev/ttyACM0@115200
+[FOCUSER] Auto-identified at /dev/ttyUSB0@9600
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /mount-position
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /camera/last-capture
+[HTTP] POST /focuser/status
+[FOCUSER-TX] Sending: "STATUS"
+[HTTP] GET /mount-position
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+[HTTP] GET /camera/last-capture
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
